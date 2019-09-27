@@ -7,9 +7,6 @@ import com.codenjoy.dojo.tetris.model.Elements;
 import com.codenjoy.dojo.tetris.model.figures.BasicFigure;
 import com.codenjoy.dojo.tetris.model.figures.FigureFabric;
 
-import java.util.LinkedList;
-import java.util.List;
-
 public class Analize {
     private Board board = null;
     FigureFabric fabric = new FigureFabric();
@@ -20,7 +17,7 @@ public class Analize {
         Point currentFigurePoint = board.getCurrentFigurePoint();
         Point pointToMove = getPointToMove(currentFigure);
         if (pointToMove != null) {
-            return getCommandForBias(currentFigurePoint, pointToMove) + Command.goDown();
+            return getCommandForBias(currentFigurePoint, pointToMove) + ", " +Command.goDown();
         } else return getRandomMove();
 
     }
